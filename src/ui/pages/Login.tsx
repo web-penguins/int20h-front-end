@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { AppState } from '../../store/reducers';
-import NeuralBackground from '../components/NeuralBackground';
 import { signIn } from '../../store/actions/user';
+import NeuralBackground from '../components/NeuralBackground';
 
 const Login: React.FC<{
   onSubmit: (login: string, password: string) => void;
