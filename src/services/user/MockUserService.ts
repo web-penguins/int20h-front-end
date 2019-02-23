@@ -30,6 +30,7 @@ class MockUserService implements AbstractUserService {
       name: this.user.name,
       totalAmountOfProducts: this.user.totalAmountOfProducts,
       registerDate: new Date(this.user.registerDate),
+      token: 'aaaaa',
     };
   }
 }

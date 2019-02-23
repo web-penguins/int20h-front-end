@@ -12,6 +12,7 @@ interface User {
 export interface UserViewModel {
   id: Id;
   name: string;
+  token: string;
   totalAmountOfProducts: number;
   registerDate: Date;
 }

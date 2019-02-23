@@ -32,6 +32,7 @@ class UserService implements AbstractUserService {
       name: this.user.name,
       totalAmountOfProducts: this.user.totalAmountOfProducts,
       registerDate: new Date(this.user.registerDate),
+      token: this.user.token,
     };
   }
 }
