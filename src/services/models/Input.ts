@@ -1,4 +1,4 @@
-import { DataType } from "./DataType";
+import { DataType } from './DataType';
 
 interface Input {
   inputType: DataType;
@@ -6,6 +6,6 @@ interface Input {
   description: string;
 }
 
-export type InputViewModel = Array<Input>;
+export type InputViewModel = Input[];
 
 export default Input;

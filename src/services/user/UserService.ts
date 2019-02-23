@@ -1,16 +1,16 @@
-import AbstractUserService from "./AbstractUserService";
-import User, { UserViewModel } from "../models/User";
-import AuthService from "../api-provider/auth/AuthService";
+import AuthService from '../api-provider/auth/AuthService';
+import User, { UserViewModel } from '../models/User';
+import AbstractUserService from './AbstractUserService';
 
 class UserService implements AbstractUserService {
   // default val, cuz' can't declare private property without initialization
   private user: User = {
     id: 1,
-    name: "Alex Willson",
-    username: "login",
-    token: "aaaaaa",
+    name: 'Alex Willson',
+    username: 'login',
+    token: 'aaaaaa',
     totalAmountOfProducts: 1,
-    registerDate: "23/02/2019 18:00:00"
+    registerDate: '23/02/2019 18:00:00',
   };
   private authenticated = false;
 
@@ -31,7 +31,7 @@ class UserService implements AbstractUserService {
       id: this.user.id,
       name: this.user.name,
       totalAmountOfProducts: this.user.totalAmountOfProducts,
-      registerDate: new Date(this.user.registerDate)
+      registerDate: new Date(this.user.registerDate),
     };
   }
 }

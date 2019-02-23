@@ -1,5 +1,5 @@
-import { Id } from "./Id";
-import { DataType } from "./DataType";
+import { DataType } from './DataType';
+import { Id } from './Id';
 
 interface Result {
   id: Id;

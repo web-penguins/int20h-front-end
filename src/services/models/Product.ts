@@ -1,6 +1,6 @@
-import { Id } from "./Id";
-import { DataType } from "./DataType";
-import { InputViewModel } from "./Input";
+import { DataType } from './DataType';
+import { Id } from './Id';
+import { InputViewModel } from './Input';
 
 interface ProductViewModel {
   productId: Id;

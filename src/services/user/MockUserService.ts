@@ -1,15 +1,14 @@
-import AbstractUserService from "./AbstractUserService";
-import User, { UserViewModel } from "../models/User";
-import { string } from "prop-types";
+import User, { UserViewModel } from '../models/User';
+import AbstractUserService from './AbstractUserService';
 
 class MockUserService implements AbstractUserService {
   private user: User = {
     id: 1,
-    name: "Alex Willson",
-    username: "login",
-    token: "aaaaaa",
+    name: 'Alex Willson',
+    username: 'login',
+    token: 'aaaaaa',
     totalAmountOfProducts: 1,
-    registerDate: "23/02/2019 18:00:00"
+    registerDate: '23/02/2019 18:00:00',
   };
 
   public isAuthenticated(): boolean {
@@ -19,7 +18,7 @@ class MockUserService implements AbstractUserService {
   public async authenticate(login: string, password: string): Promise<User> {
     this.user = {
       ...this.user,
-      username: login
+      username: login,
     };
 
     return this.user;
@@ -30,7 +29,7 @@ class MockUserService implements AbstractUserService {
       id: this.user.id,
       name: this.user.name,
       totalAmountOfProducts: this.user.totalAmountOfProducts,
-      registerDate: new Date(this.user.registerDate)
+      registerDate: new Date(this.user.registerDate),
     };
   }
 }
