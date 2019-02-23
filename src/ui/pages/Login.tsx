@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { signIn } from '../../store/actions/user';
+import Button from '../components/Button';
 import NeuralBackground from '../components/NeuralBackground';
 
 const Login: React.FC<{
@@ -33,13 +34,7 @@ const Login: React.FC<{
               value={password}
             />
           </div>
-          <button
-            type="button"
-            className="button login__button"
-            onClick={submit}
-          >
-            Submit!
-          </button>
+          <Button text="Submit!" onClick={submit} />
         </form>
       </div>
     </div>
