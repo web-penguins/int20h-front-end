@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { signIn } from '../../store/actions/user';
 import Button from '../components/Button';
 import NeuralBackground from '../components/NeuralBackground';
+import TextInput from '../components/TextInput';
 
 const Login: React.FC<{
   onSubmit: (login: string, password: string) => void;
@@ -18,20 +19,20 @@ const Login: React.FC<{
           <div className="login__title">Sign in!</div>
           <div className="login__row">
             <span>Login: </span>
-            <input
+            <TextInput
               type="text"
-              className="login__input textinput"
+              className="login__input"
               onChange={e => setLogin(e.target.value)}
               value={login}
             />
           </div>
           <div className="login__row">
             <span>Password: </span>
-            <input
+            <TextInput
               type="password"
-              className="login__input textinput"
+              className="login__input"
               onChange={e => setPassword(e.target.value)}
-              value={password}
+              value={login}
             />
           </div>
           <Button text="Submit!" onClick={submit} />
