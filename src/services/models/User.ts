@@ -7,4 +7,11 @@ interface User {
   token: string;
 }
 
+export interface UserViewModel {
+  id: Id;
+  name: string;
+  totalAmountOfProducts: number;
+  registerDate: Date;
+}
+
 export default User;
