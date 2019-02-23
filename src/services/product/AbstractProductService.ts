@@ -4,7 +4,7 @@ import RequestViewModel from '../models/Request';
 import { ResultViewModel } from '../models/Result';
 
 interface AbstractProductService {
-  getProducts(request: string): Promise<ProductViewModel>;
+  getProducts(request: string): Promise<ProductViewModel[]>;
 
   createProduct(
     name: string,
