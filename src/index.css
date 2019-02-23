@@ -6,7 +6,15 @@ body {
     sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  box-sizing: border-box;
+}
+
+.login {
+  width: 100%;
+}
+
+.neural-bg {
+  width: 600px;
+  margin: 0 auto;
 }

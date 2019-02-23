@@ -1,13 +1,14 @@
 import React from 'react';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import Header from './components/Header';
+import Login from './pages/Login';
 
 const signedInRoutes: React.Component[] = [
   // <Route path="/" exact component={Products} />
 ];
 
-const signedOutRoutes: React.Component[] = [
-  // <Route path="/login" exact component={Login} />,
+const signedOutRoutes = [
+  <Route path="/login" exact component={Login} />,
   // <Route path="/register" exact component={Register} />,
   // <Route path="/" render={() => <Redirect to={{ pathname: '/login' }} />} />,
 ];
