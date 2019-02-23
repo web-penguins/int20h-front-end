@@ -1,5 +1,7 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
+import { AppState } from '../store/reducers';
 import Header from './components/Header';
 import Login from './pages/Login';
 
@@ -26,4 +28,6 @@ App.defaultProps = {
   authorized: false,
 };
 
-export default App;
+export default connect((state: AppState) => ({
+  authorized: state.user.authorized,
+}))(App);

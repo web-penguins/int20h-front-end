@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import { AppState } from '../../store/reducers';
 import NeuralBackground from '../components/NeuralBackground';
+import { signIn } from '../../store/actions/user';
 
-const Login: React.FC<{ onSubmit: ({}) => void }> = ({ onSubmit }) => {
+const Login: React.FC<{
+  onSubmit: (login: string, password: string) => void;
+}> = ({ onSubmit }) => {
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
-  const submit = () => onSubmit({ login, password });
+  const submit = () => onSubmit(login, password);
   return (
     <div className="login">
       <NeuralBackground />
@@ -42,4 +47,7 @@ const Login: React.FC<{ onSubmit: ({}) => void }> = ({ onSubmit }) => {
   );
 };
 
-export default Login;
+export default connect(
+  null,
+  { onSubmit: signIn }
+)(Login);
