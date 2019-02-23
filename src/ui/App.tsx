@@ -15,7 +15,7 @@ const signedOutRoutes = [
 
 const App: React.FC<{ authorized: boolean }> = ({ authorized }) => (
   <div className="app">
-    <Header />
+    <Header authorized name="" />
     <BrowserRouter>
       <Switch>{authorized ? signedInRoutes : signedOutRoutes}</Switch>
     </BrowserRouter>
