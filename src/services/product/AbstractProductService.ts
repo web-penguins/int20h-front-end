@@ -10,7 +10,7 @@ interface AbstractProductService {
     name: string,
     description: string,
     inputs: InputViewModel
-  ): Promise<void>;
+  ): Promise<ProductViewModel>;
 
   execute(executeRequest: RequestViewModel): Promise<ResultViewModel>;
 }

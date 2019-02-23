@@ -30,8 +30,17 @@ class MockProductService implements AbstractProductService {
     name: string,
     description: string,
     inputs: InputViewModel
-  ): Promise<void> {
-    return;
+  ): Promise<ProductViewModel> {
+    return {
+      productId: Math.random(),
+      userId: 1,
+      inputFields: 'input',
+      output: 'output',
+      name,
+      description,
+      executedTimes: 0,
+      inputs,
+    };
   }
 
   public async execute(
