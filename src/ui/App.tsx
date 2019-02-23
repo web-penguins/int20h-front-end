@@ -10,7 +10,7 @@ const signedInRoutes: React.Component[] = [
 const signedOutRoutes = [
   <Route path="/login" exact component={Login} />,
   // <Route path="/register" exact component={Register} />,
-  // <Route path="/" render={() => <Redirect to={{ pathname: '/login' }} />} />,
+  <Route path="/" render={() => <Redirect to={{ pathname: '/login' }} />} />,
 ];
 
 const App: React.FC<{ authorized: boolean }> = ({ authorized }) => (
