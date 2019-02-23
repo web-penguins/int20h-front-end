@@ -5,6 +5,8 @@ interface User {
   name: string;
   username: string;
   token: string;
+  totalAmountOfProducts: number;
+  registerDate: string;
 }
 
 export interface UserViewModel {
