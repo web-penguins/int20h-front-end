@@ -7,7 +7,9 @@ class MockAuthService implements AbstractAuthService {
       id: 1,
       name: "Alex Willson",
       username: "alex-willson",
-      token: "token"
+      token: "token",
+      totalAmountOfProducts: 1,
+      registerDate: "23/02/2019 18:00:00"
     });
   }
 
@@ -16,7 +18,9 @@ class MockAuthService implements AbstractAuthService {
       id: Math.random(),
       name: name,
       username: login,
-      token: "token"
+      token: "token",
+      totalAmountOfProducts: 1,
+      registerDate: new Date().toString()
     });
   }
 
