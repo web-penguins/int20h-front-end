@@ -14,14 +14,19 @@ const Product: React.FC<Props> = ({ product }) => {
       <div className="product-inputs">
         {product.inputs.map(inp => {
           return (
-            <div className="product-input">
-              <label htmlFor={inp.name} />
+            <div key={inp.name} className="product-input">
+              <label htmlFor={inp.name}>Input name: {inp.name}</label>
               <input
-                key={inp.name}
                 id={inp.name}
                 type={inp.inputType === 'string' ? 'string' : 'file'}
+                placeholder=""
               />
               <p>{inp.description}</p>
+
+              {/* <h1>Product description</h1>
+              {
+                product.productId === 1 ? <p></p> : <p></p>
+              } */}
             </div>
           );
         })}
