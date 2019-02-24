@@ -438,6 +438,18 @@ body {
   font-size: 18;
   margin: 0;
 }
+.product-input .three {
+  overflow: hidden;
+}
+.product-input .three img {
+  float: left;
+  height: 150px;
+  width: 150px;
+}
+.product-input .one img {
+  width: 150px;
+  max-width: 400px;
+}
 .product-input:last-child {
   border-bottom: none;
 }
