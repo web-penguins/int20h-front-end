@@ -1,6 +1,6 @@
 import { DataType } from './DataType';
 
-interface Input {
+export interface Input {
   inputType: DataType;
   name: string;
   description: string;

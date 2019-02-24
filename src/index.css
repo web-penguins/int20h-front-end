@@ -125,6 +125,7 @@ body {
   border-radius: 3px;
   width: 500px;
   margin: 0 auto;
+  background: white;
 }
 
 .step-form h1 {
@@ -293,4 +294,77 @@ body {
 .productitem__description {
   font: 300 14px 'Ubuntu';
   margin-top: 10px;
+}
+
+.checkbox__wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox__label {
+  font: 300 14px 'Ubuntu';
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.1);
+  display: none;
+}
+
+.modal.modal_open {
+  display: block;
+}
+
+.modal__wrapper {}
+
+.createform__btn {
+  margin: 0 auto;
+}
+
+.step-form-body {
+  padding: 15px;
+}
+
+.step__btn {
+  margin-top: 15px
+}
+
+.step__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-top: 10px;
+}
+
+.secondstep__wrapper {
+  display: none;
+}
+
+.secondstep__wrapper.secondstep__wrapper_open {
+  display: block;
+}
+
+.secondstep__title {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.secondstep__options {
+  margin-bottom: 30px;
+}
+
+.secondstep__option {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.step_select {
+  width: 230px;
+  background: transparent;
+  padding: 7px;
 }
