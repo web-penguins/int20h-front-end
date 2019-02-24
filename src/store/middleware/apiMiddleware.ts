@@ -1,4 +1,5 @@
 import { AnyAction, Dispatch, MiddlewareAPI } from 'redux';
+import { products } from './modules/products';
 import { user } from './modules/user';
 
 export interface FluxStandardAction extends AnyAction {
@@ -9,6 +10,7 @@ type Handler = (action: FluxStandardAction, store: MiddlewareAPI) => void;
 
 const handlers: Record<string, Handler> = {
   ...user,
+  ...products,
 };
 
 export default (store: MiddlewareAPI) => (next: Dispatch) => (
