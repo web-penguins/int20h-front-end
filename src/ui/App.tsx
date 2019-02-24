@@ -4,6 +4,7 @@ import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import { AppState } from '../store/reducers';
 import Header from './components/Header';
 import Login from './pages/Login';
+import Product from './pages/Product';
 import Profile from './pages/Profile';
 
 const signedInRoutes = [
@@ -12,6 +13,11 @@ const signedInRoutes = [
   <Route
     path="/"
     render={() => <Redirect to={{ pathname: '/profile' }} />}
+    key="route-redirect-signed"
+  />,
+  <Route
+    path="/product/:productId"
+    component={Product}
     key="route-redirect-signed"
   />,
 ];
@@ -29,7 +35,7 @@ const App: React.FC<{ authorized: boolean }> = ({ authorized }) => (
   <div className="app">
     <BrowserRouter>
       <>
-        <Header />
+        <Header authorized={authorized} name="Bla" />
         <Switch>{authorized ? signedInRoutes : signedOutRoutes}</Switch>
       </>
     </BrowserRouter>
