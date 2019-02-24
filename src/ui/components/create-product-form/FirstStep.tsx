@@ -25,7 +25,7 @@ const FirstStep: React.FC<{ onSubmit: ({}) => void }> = ({ onSubmit }) => {
             onChange={e => setDesc(e.target.value)}
           />
         </div>
-        <Button onClick={submit} text="Next" />
+        <Button onClick={submit} text="Next" className="step__btn" />
       </form>
     </div>
   );
