@@ -4,11 +4,11 @@ import { InputViewModel } from '../../services/models/Input';
 import { OutputViewModel } from '../../services/models/Output';
 import { createProduct as createProductAction } from '../../store/actions/products';
 import { AppState } from '../../store/reducers';
+import { ProductsState } from '../../store/reducers/products';
 import Button from '../components/Button';
 import StepForm from '../components/create-product-form/StepForm';
 import Modal from '../components/Modal';
 import ProductItem from '../components/ProductItem';
-import { ProductsState } from '../../store/reducers/products';
 
 const arr = [
   {
@@ -88,9 +88,9 @@ const Profile: React.FC<{
             </div>
           </div>
           <div className="profile__products">
-            {(products.products ? products.products : []).map(item => (
-              <ProductItem {...item} />
-            ))}
+            {products.products
+              ? products.products.map(item => <ProductItem {...item} />)
+              : placeholder}
           </div>
         </div>
       </div>
@@ -103,6 +103,7 @@ const Profile: React.FC<{
               data.inputs,
               data.outputs
             );
+            setModalOpen(false);
           }}
         />
       </Modal>

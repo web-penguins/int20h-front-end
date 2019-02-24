@@ -17,7 +17,9 @@ const Header: React.FC<{ authorized: boolean; name: string }> = ({
 }) => (
   <div className="header">
     <div className="header__left">
-      <span className="header__appname">Neural lab</span>
+      <Link to="/search" className="header__appname">
+        Neural lab
+      </Link>
     </div>
     <div className="header__right">
       {authorized ? renderSigned(name) : renderUnsigned()}

@@ -48,6 +48,7 @@ body {
   font-size: 25px;
   font-weight: 400;
   color: #2F7ABB;
+  text-decoration: none;
 }
 
 .header__greeting {
@@ -266,6 +267,8 @@ body {
   border-bottom: 1px solid #eee;
   margin-top: 17px;
   padding-bottom: 17px;
+  text-decoration: none;
+  display: block;
 }
 
 .productitem__top {
@@ -294,6 +297,7 @@ body {
 .productitem__description {
   font: 300 14px 'Ubuntu';
   margin-top: 10px;
+  color: #444;
 }
 
 .checkbox__wrapper {
@@ -367,4 +371,18 @@ body {
   width: 230px;
   background: transparent;
   padding: 7px;
+}
+
+.search {
+  padding-top: 20px;
+  width: 920px;
+  margin: 0 auto;
+}
+
+.search__field {
+  width: 100%
+}
+
+.search__products {
+  margin-top: 30px;
 }

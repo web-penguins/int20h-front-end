@@ -6,11 +6,18 @@ import Header from './components/Header';
 import Login from './pages/Login';
 import Product from './pages/Product';
 import Profile from './pages/Profile';
+import Search from './pages/Search';
 
 const signedInRoutes = [
   // <Route path="/" exact component={Products} />
+  <Route path="/search" exact component={Search} key="route-search" />,
   <Route path="/profile" exact component={Profile} key="route-profile" />,
-  <Route path="/product/:productId" component={Product} key="route-product" />,
+  <Route
+    path="/product/:productId"
+    exact
+    component={Product}
+    key="route-product"
+  />,
   <Route
     path="/"
     render={() => <Redirect to={{ pathname: '/profile' }} />}

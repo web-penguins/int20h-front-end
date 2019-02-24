@@ -1,13 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import brain from '../assets/img/brain.png';
 
 const ProductItem: React.FC<{
+  productId: number;
   name: string;
   description: string;
   executedTimes: number;
-}> = ({ name, description, executedTimes }) => (
-  <div className="productitem">
+}> = ({ productId, name, description, executedTimes }) => (
+  <Link to={`/product/${productId}`} className="productitem">
     <div className="productitem__top">
       <div className="productitem__name">
         <img className="productitem__brain" src={brain} />
@@ -18,7 +20,7 @@ const ProductItem: React.FC<{
       </div>
     </div>
     <div className="productitem__description">{description}</div>
-  </div>
+  </Link>
 );
 
 export default ProductItem;
