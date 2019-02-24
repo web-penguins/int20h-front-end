@@ -33,7 +33,7 @@ const Product: React.FC<Props> = ({ product }) => {
 
 const mapStateToProps = (state: AppState, ownProps: any): Props => ({
   product: state.products.products!.filter(
-    pr => pr.productId === ownProps.match.params.productId
+    pr => pr.productId === Number(ownProps.match.params.productId)
   )[0],
 });
 
