@@ -1,5 +1,10 @@
+export const enum OutputType {
+  STRING = 'string',
+  PHOTO = 'photo',
+}
+
 export interface Output {
-  type: string;
+  type: OutputType;
 }
 
 export type OutputViewModel = Output[];

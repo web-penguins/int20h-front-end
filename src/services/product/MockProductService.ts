@@ -1,5 +1,5 @@
 import { InputViewModel } from '../models/Input';
-import { OutputViewModel } from '../models/Output';
+import { OutputViewModel, OutputType } from '../models/Output';
 import ProductViewModel from '../models/Product';
 import RequestViewModel from '../models/Request';
 import { ResultViewModel } from '../models/Result';
@@ -21,7 +21,7 @@ class MockProductService implements AbstractProductService {
             description: 'description',
           },
         ],
-        outputs: [{ type: 'string' }],
+        outputs: [{ type: OutputType.STRING }],
       },
     ];
   }
