@@ -38,7 +38,11 @@ const FourthStep = ({ onSubmit }) => {
         />
         <div className="step__filedesc">{data ? data.name : ''}</div>
       </div>
-      <Button onClick={() => onSubmit()} text="Create" className="step__btn" />
+      <Button
+        onClick={() => onSubmit([jsonInput, dataInput])}
+        text="Create"
+        className="step__btn"
+      />
     </div>
   );
 };

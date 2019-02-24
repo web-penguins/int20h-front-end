@@ -10,6 +10,7 @@ class AuthService implements AbstractAuthService {
         Accept: 'application/json',
         'Content-Type': 'application/json',
       },
+      mode: 'no-cors',
       body: JSON.stringify({
         login,
         password,

@@ -22,19 +22,19 @@ class ProductService implements AbstractProductService {
   }
 
   public async getProducts(request: string): Promise<ProductViewModel[]> {
-    return this.isAuthenticated
-      ? fetch(endpoint + '/product/list', {
-          method: 'POST',
-          headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json',
-            Token: this.user!.token,
-          },
-          body: JSON.stringify({
-            request,
-          }),
-        }).then(res => res.json())
-      : new Error('Not authenticated');
+    return fetch(endpoint + '/product/list', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+        // Token: this.user!.token,
+      },
+      mode: 'no-cors',
+      body: JSON.stringify({
+        request,
+      }),
+    }).then(res => res.json());
+    //: new Error('Not authenticated');
   }
 
   public async createProduct(
@@ -46,23 +46,21 @@ class ProductService implements AbstractProductService {
   ): Promise<ProductViewModel> {
     const formData = new FormData();
     files.forEach(f => formData.append('files[]', f));
-    return this.isAuthenticated
-      ? fetch(endpoint + '/product/create', {
-          method: 'POST',
-          headers: {
-            Accept: 'application/json',
-            'Content-Type': 'multipart/form-data',
-            Token: this.user!.token,
-            Metadata: JSON.stringify({
-              name,
-              description,
-              inputs,
-              outputs,
-            }),
-          },
-          body: formData,
-        }).then(res => res.json())
-      : new Error('Not authenticated');
+    return fetch(endpoint + '/product/create', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'multipart/form-data',
+        // Token: this.user!.token,
+        Metadata: JSON.stringify({
+          name,
+          description,
+          inputs,
+          outputs,
+        }),
+      },
+      body: formData,
+    }).then(res => res.json());
   }
 
   public async execute(
