@@ -23,10 +23,30 @@ const Product: React.FC<Props> = ({ product }) => {
               />
               <p>{inp.description}</p>
 
-              {/* <h1>Product description</h1>
-              {
-                product.productId === 1 ? <p></p> : <p></p>
-              } */}
+              <h1>Example of photos</h1>
+              {product.productId === 1 ? (
+                <p className="three">
+                  <img
+                    src="http://blog.otoro.net/assets/20160401/png/mnist_input_0.png"
+                    alt=""
+                  />
+                  <img
+                    src="http://blog.otoro.net/assets/20160401/png/mnist_input_22.png"
+                    alt=""
+                  />
+                  <img
+                    src="http://blog.otoro.net/assets/20160401/png/mnist_output_5.png"
+                    alt=""
+                  />
+                </p>
+              ) : (
+                <p className="one">
+                  <img
+                    src="http://community.datacamp.com.s3.amazonaws.com/community/production/ckeditor_assets/pictures/657/content_traffic_signs1.png"
+                    alt=""
+                  />
+                </p>
+              )}
             </div>
           );
         })}
