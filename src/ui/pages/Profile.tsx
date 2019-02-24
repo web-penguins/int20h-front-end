@@ -10,27 +10,6 @@ import StepForm from '../components/create-product-form/StepForm';
 import Modal from '../components/Modal';
 import ProductItem from '../components/ProductItem';
 
-const arr = [
-  {
-    name: 'Some name',
-    description:
-      'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit',
-    executedTimes: 1,
-  },
-  {
-    name: 'Some more name',
-    description:
-      'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit',
-    executedTimes: 0,
-  },
-  {
-    name: 'Cool name',
-    description:
-      'Sed ut perspiciatis unde omnis iste  ipsa quae ab illo inventore veritatis et quasi architecto. Nemo enim ipsam voluptatem quia  aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit',
-    executedTimes: 3,
-  },
-];
-
 const placeholder = (
   <div className="products__placeholder">
     There no products here yet.
