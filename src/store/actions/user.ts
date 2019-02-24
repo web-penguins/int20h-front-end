@@ -1,3 +1,4 @@
+import User from '../../services/models/User';
 import { UserActionType } from '../constants/user';
 
 export interface SignInAction {
@@ -8,11 +9,14 @@ export interface SignInAction {
   };
 }
 
-export interface SignedInAction {
-  type: UserActionType.SIGNED_IN;
+export interface SetUserAction {
+  type: UserActionType.SET_USER;
+  payload: {
+    user: User;
+  };
 }
 
-export type UserAction = SignInAction | SignedInAction;
+export type UserAction = SignInAction | SetUserAction;
 
 export const signIn = (login: string, password: string): SignInAction => ({
   type: UserActionType.SIGN_IN,
@@ -22,6 +26,7 @@ export const signIn = (login: string, password: string): SignInAction => ({
   },
 });
 
-export const signedIn = (): SignedInAction => ({
-  type: UserActionType.SIGNED_IN,
+export const setUser = (user: User): SetUserAction => ({
+  type: UserActionType.SET_USER,
+  payload: { user },
 });

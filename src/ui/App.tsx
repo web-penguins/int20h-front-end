@@ -4,22 +4,34 @@ import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import { AppState } from '../store/reducers';
 import Header from './components/Header';
 import Login from './pages/Login';
+import Profile from './pages/Profile';
 
-const signedInRoutes: React.Component[] = [
+const signedInRoutes = [
   // <Route path="/" exact component={Products} />
+  <Route path="/profile" exact component={Profile} key="route-profile" />,
+  <Route
+    path="/"
+    render={() => <Redirect to={{ pathname: '/profile' }} />}
+    key="route-redirect-signed"
+  />,
 ];
 
 const signedOutRoutes = [
-  <Route path="/login" exact component={Login} />,
-  // <Route path="/register" exact component={Register} />,
-  <Route path="/" render={() => <Redirect to={{ pathname: '/login' }} />} />,
+  <Route path="/login" exact component={Login} key="route-login" />,
+  <Route
+    path="/"
+    render={() => <Redirect to={{ pathname: '/login' }} />}
+    key="route-redirect"
+  />,
 ];
 
 const App: React.FC<{ authorized: boolean }> = ({ authorized }) => (
   <div className="app">
-    <Header authorized name="" />
     <BrowserRouter>
-      <Switch>{authorized ? signedInRoutes : signedOutRoutes}</Switch>
+      <>
+        <Header />
+        <Switch>{authorized ? signedInRoutes : signedOutRoutes}</Switch>
+      </>
     </BrowserRouter>
   </div>
 );

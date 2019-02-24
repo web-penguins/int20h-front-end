@@ -1,7 +1,13 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { AppState } from '../../store/reducers';
 
 const renderSigned = (name: string) => (
-  <span className="header__greeting">{name}</span>
+  <div className="header__greeting">
+    <span>Signed in as </span>
+    <Link to="/profile">{name}</Link>
+  </div>
 );
 const renderUnsigned = () => '';
 
@@ -19,4 +25,7 @@ const Header: React.FC<{ authorized: boolean; name: string }> = ({
   </div>
 );
 
-export default Header;
+export default connect((state: AppState) => ({
+  authorized: state.user.authorized,
+  name: state.user.user ? state.user.user.name : '',
+}))(Header);

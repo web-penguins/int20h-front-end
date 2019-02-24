@@ -35,7 +35,7 @@ const Login: React.FC<{
               value={login}
             />
           </div>
-          <Button text="Submit!" onClick={submit} />
+          <Button text="Submit!" onClick={submit} className="login__button" />
         </form>
       </div>
     </div>

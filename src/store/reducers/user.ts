@@ -1,23 +1,24 @@
+import User from '../../services/models/User';
 import { UserAction } from '../actions/user';
 import { UserActionType } from '../constants/user';
 
 export interface UserState {
   authorized: boolean;
-  name: string;
+  user: User | null;
 }
 
 const initial = {
   authorized: false,
-  name: '',
+  user: null,
 };
 
 export const user = (
-  state: UserState = initial,
+  state: UserState = initial!,
   action: UserAction
 ): UserState => {
   switch (action.type) {
-    case UserActionType.SIGNED_IN:
-      return { ...state, authorized: true };
+    case UserActionType.SET_USER:
+      return { user: action.payload.user, authorized: true };
   }
   return state;
 };

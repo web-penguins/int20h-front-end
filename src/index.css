@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
+
 * {
   font-family: 'Open Sans', sans-serif;
 }
+
 body {
   margin: 0;
   padding: 0;
@@ -39,13 +41,23 @@ body {
   justify-content: space-between;
   align-items: center;
   height: 60px;
-  padding: 20px 30px
+  padding: 17px 30px
 }
 
 .header__appname {
   font-size: 25px;
   font-weight: 400;
   color: #2F7ABB;
+}
+
+.header__greeting {
+  font: 300 13px 'Ubuntu';
+  color: #777;
+}
+
+.header__greeting a {
+  color: black;
+  text-decoration: none;
 }
 
 .login {
@@ -103,32 +115,42 @@ body {
   font: 300 14px 'Ubuntu';
   cursor: pointer;
 }
+
+.button_green {
+  background: #40C233
+}
+
 .step-form {
   border: 1px solid #ccc;
   border-radius: 3px;
   width: 500px;
   margin: 0 auto;
 }
+
 .step-form h1 {
   text-align: center;
   margin: 15px;
   font-weight: 400;
 }
+
 .step-form-header {
   margin-top: 15px;
   border-top: 1px solid #ccc;
   padding: 15px;
   overflow: hidden;
 }
+
 .step-form-header div {
   float: left;
 }
+
 .step-form-header .step {
   height: 44px;
   width: 44px;
   border-radius: 3px;
   border: 1px solid #3498db;
 }
+
 .step-form-header .step p {
   text-align: center;
   line-height: 44px;
@@ -136,16 +158,139 @@ body {
   color: #333;
   font-size: 16;
 }
+
 .step-form-header .step.active,
 .step-form-header .line.active {
   background: #3498db;
 }
+
 .step-form-header .step.active p {
   color: #fff;
 }
+
 .step-form-header .line {
   border: 1px solid #3498db;
   width: calc((100% - 132px) / 2);
   height: 4px;
   margin-top: 20px;
+}
+
+.profile {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.profile__left {
+  width: 260px;
+  padding: 10px;
+}
+
+.profile__name {
+  font: 300 30px 'Ubuntu';
+  text-align: center;
+  margin-top: 40px;
+}
+
+.profile__photo {
+  width: 200px;
+  height: 200px;
+  margin: auto;
+}
+
+.profile__photo img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 50%;
+}
+
+.profile__data {
+  font: 300 14px 'Ubuntu';
+  margin-top: 20px;
+}
+
+.profile__data span {
+  font: 300 13px 'Ubuntu';
+  color: #777;
+}
+
+.hr {
+  width: 100%;
+  height: 1px;
+  background: #eee;
+}
+
+.profile__hr {
+  margin-top: 20px
+}
+
+.profile__right {
+  width: 940px;
+}
+
+.profile__topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.profile__title {
+  font: 300 20px 'Ubuntu';
+}
+
+.products__placeholder {
+  margin-top: 20px;
+  border-radius: 10px;
+  background: #f8f8f8;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font: 100 40px 'Ubuntu';
+  color: #444
+}
+
+.products__placeholder--button {
+  margin-top: 30px;
+}
+
+.profile__products {
+  margin-top: 30px;
+}
+
+.productitem {
+  border-bottom: 1px solid #eee;
+  margin-top: 17px;
+  padding-bottom: 17px;
+}
+
+.productitem__top {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.productitem__name {
+  font: 300 20px 'Ubuntu';
+  color: #333;
+}
+
+.productitem__brain {
+  width: 17px;
+  height: 17px;
+  margin-right: 7px;
+}
+
+.productitem__executions {
+  font: 300 14px 'Ubuntu';
+  color: #444;
+  margin-right: 10px
+}
+
+.productitem__description {
+  font: 300 14px 'Ubuntu';
+  margin-top: 10px;
 }
