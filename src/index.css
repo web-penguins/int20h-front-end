@@ -37,12 +37,22 @@ body {
   justify-content: space-between;
   align-items: center;
   height: 60px;
-  padding: 20px 30px
+  padding: 17px 30px
 }
 
 .header__appname {
   font: 300 25px 'Ubuntu';
   color: #2F7ABB;
+}
+
+.header__greeting {
+  font: 300 13px 'Ubuntu';
+  color: #777;
+}
+
+.header__greeting a {
+  color: black;
+  text-decoration: none;
 }
 
 .login {
