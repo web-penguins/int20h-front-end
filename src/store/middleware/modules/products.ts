@@ -34,7 +34,7 @@ export const execute = (action: ExecuteProductAction, store: MiddlewareAPI) => {
     );
 };
 
-export const user = {
+export const products = {
   [ProductsActionType.GET_PRODUCTS]: get,
   [ProductsActionType.CREATE_PRODUCT]: create,
   [ProductsActionType.EXECUTE_PRODUCT]: execute,
