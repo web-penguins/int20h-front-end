@@ -33,7 +33,8 @@ const Profile: React.FC<{
     name: string,
     desc: string,
     input: InputViewModel,
-    output: OutputViewModel
+    output: OutputViewModel,
+    files: File[]
   ) => void;
 }> = ({ name, registerDate, productCount, createProduct, products }) => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -80,7 +81,8 @@ const Profile: React.FC<{
               data.name,
               data.description,
               data.inputs,
-              data.outputs
+              data.outputs,
+              data.files
             );
             setModalOpen(false);
           }}

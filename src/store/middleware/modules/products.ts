@@ -11,8 +11,8 @@ import {
 } from '../../actions/products';
 import { ProductsActionType } from '../../constants/products';
 
-// const service = new MockProductService();
-const service = new ProductsService();
+const service = new MockProductService();
+// const service = new ProductsService();
 
 export const get = (action: GetProductsAction, store: MiddlewareAPI) => {
   const { request } = action.payload;
