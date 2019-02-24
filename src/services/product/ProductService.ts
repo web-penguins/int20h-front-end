@@ -1,5 +1,6 @@
 import endpoint from '../endpoint';
 import { InputViewModel } from '../models/Input';
+import { OutputViewModel } from '../models/Output';
 import ProductViewModel from '../models/Product';
 import RequestViewModel from '../models/Request';
 import { ResultViewModel } from '../models/Result';
@@ -39,7 +40,8 @@ class ProductService implements AbstractProductService {
   public async createProduct(
     name: string,
     description: string,
-    inputs: InputViewModel
+    inputs: InputViewModel,
+    outputs: OutputViewModel
   ): Promise<ProductViewModel> {
     return this.isAuthenticated
       ? fetch(endpoint + '/product/create', {
@@ -53,6 +55,7 @@ class ProductService implements AbstractProductService {
             name,
             description,
             inputs,
+            outputs,
           }),
         }).then(res => res.json())
       : new Error('Not authenticated');

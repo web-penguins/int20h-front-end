@@ -1,4 +1,5 @@
 import { InputViewModel } from '../models/Input';
+import { OutputViewModel } from '../models/Output';
 import ProductViewModel from '../models/Product';
 import RequestViewModel from '../models/Request';
 import { ResultViewModel } from '../models/Result';
@@ -10,8 +11,6 @@ class MockProductService implements AbstractProductService {
       {
         productId: 1,
         userId: 1,
-        inputFields: 'input',
-        output: 'output',
         name: 'neural network #1',
         description: 'description of the neural network 1',
         executedTimes: 124,
@@ -22,6 +21,7 @@ class MockProductService implements AbstractProductService {
             description: 'description',
           },
         ],
+        outputs: [{ type: 'string' }],
       },
     ];
   }
@@ -29,17 +29,17 @@ class MockProductService implements AbstractProductService {
   public async createProduct(
     name: string,
     description: string,
-    inputs: InputViewModel
+    inputs: InputViewModel,
+    outputs: OutputViewModel
   ): Promise<ProductViewModel> {
     return {
       productId: Math.random(),
       userId: 1,
-      inputFields: 'input',
-      output: 'output',
       name,
       description,
       executedTimes: 0,
       inputs,
+      outputs,
     };
   }
 
