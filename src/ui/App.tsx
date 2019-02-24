@@ -10,14 +10,10 @@ import Profile from './pages/Profile';
 const signedInRoutes = [
   // <Route path="/" exact component={Products} />
   <Route path="/profile" exact component={Profile} key="route-profile" />,
+  <Route path="/product/:productId" component={Product} key="route-product" />,
   <Route
     path="/"
     render={() => <Redirect to={{ pathname: '/profile' }} />}
-    key="route-redirect-signed"
-  />,
-  <Route
-    path="/product/:productId"
-    component={Product}
     key="route-redirect-signed"
   />,
 ];
@@ -35,7 +31,7 @@ const App: React.FC<{ authorized: boolean }> = ({ authorized }) => (
   <div className="app">
     <BrowserRouter>
       <>
-        <Header authorized={authorized} name="Bla" />
+        <Header />
         <Switch>{authorized ? signedInRoutes : signedOutRoutes}</Switch>
       </>
     </BrowserRouter>

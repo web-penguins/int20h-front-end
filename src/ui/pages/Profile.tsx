@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import { InputViewModel } from '../../services/models/Input';
+import { OutputViewModel } from '../../services/models/Output';
+import { createProduct as createProductAction } from '../../store/actions/products';
 import { AppState } from '../../store/reducers';
 import Button from '../components/Button';
-import ProductItem from '../components/ProductItem';
-import Modal from '../components/Modal';
 import StepForm from '../components/create-product-form/StepForm';
+import Modal from '../components/Modal';
+import ProductItem from '../components/ProductItem';
+import { ProductsState } from '../../store/reducers/products';
 
 const arr = [
   {
@@ -45,7 +49,14 @@ const Profile: React.FC<{
   name: string;
   registerDate: Date;
   productCount: number;
-}> = ({ name, registerDate, productCount }) => {
+  products: ProductsState;
+  createProduct: (
+    name: string,
+    desc: string,
+    input: InputViewModel,
+    output: OutputViewModel
+  ) => void;
+}> = ({ name, registerDate, productCount, createProduct, products }) => {
   const [modalOpen, setModalOpen] = useState(false);
   return (
     <>
@@ -77,14 +88,23 @@ const Profile: React.FC<{
             </div>
           </div>
           <div className="profile__products">
-            {arr.map(item => (
+            {(products.products ? products.products : []).map(item => (
               <ProductItem {...item} />
             ))}
           </div>
         </div>
       </div>
       <Modal open={modalOpen}>
-        <StepForm complete={data => console.log(data)} />
+        <StepForm
+          complete={data => {
+            createProduct(
+              data.name,
+              data.description,
+              data.inputs,
+              data.outputs
+            );
+          }}
+        />
       </Modal>
     </>
   );
@@ -93,9 +113,15 @@ const Profile: React.FC<{
 const getUserValue = (state: AppState, field: string) =>
   state.user.user ? (state.user.user as Record<string, any>)[field] : '';
 
-export default connect((state: AppState) => ({
-  name: getUserValue(state, 'name'),
-  login: getUserValue(state, 'username'),
-  productCount: getUserValue(state, 'totalAmountOfProducts'),
-  registerDate: getUserValue(state, 'registerDate'),
-}))(Profile);
+export default connect(
+  (state: AppState) => ({
+    name: getUserValue(state, 'name'),
+    login: getUserValue(state, 'username'),
+    productCount: getUserValue(state, 'totalAmountOfProducts'),
+    registerDate: getUserValue(state, 'registerDate'),
+    products: state.products,
+  }),
+  {
+    createProduct: createProductAction,
+  }
+)(Profile);

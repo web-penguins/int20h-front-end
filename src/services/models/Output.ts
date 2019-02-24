@@ -1,4 +1,4 @@
-export const enum OutputType {
+export enum OutputType {
   STRING = 'string',
   PHOTO = 'photo',
 }
