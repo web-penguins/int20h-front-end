@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Button from '../Button';
 import FirstStep from './FirstStep';
+import FourthStep from './FourthStep';
 import SecondStep from './SecondStep';
 import ThirdStep from './ThirdStep';
 
@@ -10,6 +11,7 @@ const StepForm: React.FC<{ complete: (data: any) => void }> = ({
   const [activeStepId, setActiveStepId] = useState(0);
   const [first, setFirst] = useState({});
   const [inputs, setSecond] = useState([]);
+  const [outputs, setFourth] = useState([]);
   const steps = [
     {
       id: 0,
@@ -37,8 +39,19 @@ const StepForm: React.FC<{ complete: (data: any) => void }> = ({
       id: 2,
       formComponent: (
         <ThirdStep
-          onSubmit={(outputs: any) => {
-            const product = { ...first, inputs, outputs };
+          onSubmit={(array: any) => {
+            setFourth(array);
+            next();
+          }}
+        />
+      ),
+    },
+    {
+      id: 3,
+      formComponent: (
+        <FourthStep
+          onSubmit={(files: any) => {
+            const product = { ...first, inputs, outputs, files };
             complete(product);
           }}
         />

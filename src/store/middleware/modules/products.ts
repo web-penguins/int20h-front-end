@@ -22,9 +22,9 @@ export const get = (action: GetProductsAction, store: MiddlewareAPI) => {
 };
 
 export const create = (action: CreateProductAction, store: MiddlewareAPI) => {
-  const { name, description, inputs, outputs } = action.payload;
+  const { name, description, inputs, outputs, files } = action.payload;
   service
-    .createProduct(name, description, inputs, outputs)
+    .createProduct(name, description, inputs, outputs, files)
     .then(product => store.dispatch(saveCreatedProduct(product)));
 };
 export const execute = (action: ExecuteProductAction, store: MiddlewareAPI) => {

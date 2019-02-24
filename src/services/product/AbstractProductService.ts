@@ -11,7 +11,8 @@ interface AbstractProductService {
     name: string,
     description: string,
     inputs: InputViewModel,
-    outputs: OutputViewModel
+    outputs: OutputViewModel,
+    files: File[]
   ): Promise<ProductViewModel>;
 
   execute(executeRequest: RequestViewModel): Promise<ResultViewModel>;

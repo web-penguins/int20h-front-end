@@ -41,22 +41,26 @@ class ProductService implements AbstractProductService {
     name: string,
     description: string,
     inputs: InputViewModel,
-    outputs: OutputViewModel
+    outputs: OutputViewModel,
+    files: File[]
   ): Promise<ProductViewModel> {
+    const formData = new FormData();
+    files.forEach(f => formData.append('files[]', f));
     return this.isAuthenticated
       ? fetch(endpoint + '/product/create', {
           method: 'POST',
           headers: {
             Accept: 'application/json',
-            'Content-Type': 'application/json',
+            'Content-Type': 'multipart/form-data',
             Token: this.user!.token,
+            Metadata: JSON.stringify({
+              name,
+              description,
+              inputs,
+              outputs,
+            }),
           },
-          body: JSON.stringify({
-            name,
-            description,
-            inputs,
-            outputs,
-          }),
+          body: formData,
         }).then(res => res.json())
       : new Error('Not authenticated');
   }

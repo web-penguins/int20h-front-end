@@ -1,5 +1,5 @@
 import { InputViewModel } from '../models/Input';
-import { OutputViewModel, OutputType } from '../models/Output';
+import { OutputType, OutputViewModel } from '../models/Output';
 import ProductViewModel from '../models/Product';
 import RequestViewModel from '../models/Request';
 import { ResultViewModel } from '../models/Result';
@@ -30,7 +30,8 @@ class MockProductService implements AbstractProductService {
     name: string,
     description: string,
     inputs: InputViewModel,
-    outputs: OutputViewModel
+    outputs: OutputViewModel,
+    files: File[]
   ): Promise<ProductViewModel> {
     return {
       productId: Math.random(),

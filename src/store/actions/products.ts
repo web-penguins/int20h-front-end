@@ -22,6 +22,7 @@ export interface CreateProductAction {
     description: string;
     inputs: InputViewModel;
     outputs: OutputViewModel;
+    files: File[];
   };
 }
 
@@ -66,10 +67,11 @@ export const createProduct = (
   name: string,
   description: string,
   inputs: InputViewModel,
-  outputs: OutputViewModel
+  outputs: OutputViewModel,
+  files: File[]
 ): CreateProductAction => ({
   type: ProductsActionType.CREATE_PRODUCT,
-  payload: { name, description, inputs, outputs },
+  payload: { name, description, inputs, outputs, files },
 });
 
 export const saveCreatedProduct = (
