@@ -32,7 +32,7 @@ const Login: React.FC<{
               type="password"
               className="login__input"
               onChange={e => setPassword(e.target.value)}
-              value={login}
+              value={password}
             />
           </div>
           <Button text="Submit!" onClick={submit} className="login__button" />
