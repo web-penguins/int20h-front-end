@@ -22,6 +22,11 @@ const Product: React.FC<Props> = ({ product }) => {
                 placeholder=""
               />
               <p>{inp.description}</p>
+
+              {/* <h1>Product description</h1>
+              {
+                product.productId === 1 ? <p></p> : <p></p>
+              } */}
             </div>
           );
         })}
